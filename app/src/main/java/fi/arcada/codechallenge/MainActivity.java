@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     TextView outputText;
     EditText inputText;
 
-    double[] values = { 3.5,4.4,9.0,1.2,6.5,12.0 };
+    double[] testdata = { 200535, 346112, 554667, 232454, 598733, 287444, 312390, 412545, 434506, 80121, 89010};
+ ArrayList<Double> values = New ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,18 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate(View view) {
 
-        double[] values = { 3.5,4.4,9.0,1.2,6.5,12.0 };
-
-        double sum = 0;
-
-        for (int i = 0; i <values.length; i++) {
-
-            sum += values[i];
 
 
-            double mean = sum / values.length;
-
-            outputText.setText(String.format("medelvärde %.2f" , Statistics.calcmean(values)));
+            outputText.setText(String.format("medelvärde %.2f?\n median: %.2f" ,
+                    Statistics.calcmean(values),
+                    Statistics.calcmedian(values)
+                    ));
 
 
         }
